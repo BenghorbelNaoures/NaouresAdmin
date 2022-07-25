@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Portal - Bootstrap 5 Admin Dashboard Template For Developers</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="/assets/plugins/fontawesome/js/all.min.js"></script>
+    
+    <!-- App CSS -->  
+    <link id="theme-style" rel="stylesheet" href="/assets/css/portal.css">
+
+</head> 
+
+<body class="app">   	
+       
+    <div class="app-wrapper">
+	    
+	    <div class="app-content pt-3 p-md-3 p-lg-4">
+		    <div class="container-xl">			    
+			    <h1 class="app-page-title">Formulaire d'ajout d'un nouveau produit</h1>
+			    <hr class="mb-4">
+                <div class="row g-4 settings-section">
+	                <div class="col-12 col-md-4">
+		                <h3 class="section-title">General</h3>
+		                <div class="section-intro">Une fiche produit est un document marketing qui fournit des informations sur le produit, notamment des informations techniques et des spécifications, à un client ou à un distributeur <a href="help.html">Learn more</a></div>
+	                </div>
+	                <div class="col-12 col-md-8">
+		                <div class="app-card app-card-settings shadow-sm p-4">
+						    
+						    <div class="app-card-body">
+							    <form class="settings-form" [formGroup]="addProduct" novalidate >
+
+									<div class="mb-3">
+									    <label for="setting-input-2" class="form-label">Nom produit</label>
+									    <input type="text" class="form-control" id="setting-input-2" id="nomProd" required name="nomProd" placeholder="Nom Produit" formControlName="nomProd">
+									</div>
+									<div class="mb-3">
+									    <label for="setting-input-2" class="form-label">Catégorie produit</label>
+										<select class="form-control" formControlName="productCategoryId">
+											<option class="form-control">Select</option>
+											<option class="form-control" id="productCategoryId" name=" productCategoryId" value="{{productCategory._id}}"    *ngFor="let productCategory of productsCategory">{{productCategory.libelle}}</option>
+										  </select>
+										
+									</div>
+									<div class="mb-3">
+									    <label for="setting-input-2" class="form-label">Description produit</label>
+										<textarea  type="text" class="form-control" id="description" name="description"  rows="3" placeholder="Description produit" formControlName="description"></textarea>
+									</div>
+									<div class="mb-3">
+									    <label for="setting-input-2" class="form-label">Quantité</label>
+									    <input type="number" class="form-control" id="quantiteProd"name="quantiteProd" formControlName="quantiteProd" required>
+									</div>
+									<div class="mb-3">
+									    <label for="setting-input-2" class="form-label">Prix</label>
+									    <input type="number" class="form-control" id="prix"name="prix" formControlName="prix" required>
+									</div>
+
+									<div class="mb-3">
+									    <label for="setting-input-2" class="form-label">Importer Produit </label>
+									    <input type="file" class="form-control" id="setting-input-2"  required>
+									</div>
+
+									<button type="submit" class="btn app-btn-primary" (click)="onSubmit()">Save Changes</button>
+							    </form>
+						    </div><!--//app-card-body-->
+						    
+						</div><!--//app-card-->
+	                </div>
+                </div><!--//row-->
+                
+				<br><br>
+                
+		    </div><!--//container-fluid-->
+	    </div><!--//app-content-->
+
+	    
+    </div><!--//app-wrapper-->    					
+
+ 
+    <!-- Javascript -->          
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+    
+    <!-- Page Specific JS -->
+    <script src="assets/js/app.js"></script> 
+
+</body>
+</html> 
+

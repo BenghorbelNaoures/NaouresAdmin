@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Portal - Bootstrap 5 Admin Dashboard Template For Developers</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="/assets/plugins/fontawesome/js/all.min.js"></script>
+    
+    <!-- App CSS -->  
+    <link id="theme-style" rel="stylesheet" href="/assets/css/portal.css">
+
+</head> 
+
+<body class="app">   	
+	
+    <div class="app-wrapper">
+	    
+	    <div class="app-content pt-3 p-md-3 p-lg-4">
+		    <div class="container-xl">			    
+			    <h1 class="app-page-title">Formulaire de mise à jour d'un produit</h1>
+			    <hr class="mb-4"><br><br>
+				<div class="row g-4 settings-section"></div>
+                <div class="row g-4 settings-section">
+					
+	                <div class="col-12 col-md-4">
+						<img [src]="produits.image" [alt]="produits.image" formControlName="image"><br><br>
+						<qr-code class="text-center" [value]=produits.description [size]="150"></qr-code>
+                    </div>
+
+	                <div class="col-12 col-md-8">
+		                <div class="app-card app-card-settings shadow-sm p-4">
+						    
+						    <div class="app-card-body">
+							    <form class="settings-form" [formGroup]="addProduct" novalidate >
+									<!--<div>
+										<img [src]="produits.image" [alt]="produits.image" formControlName="image">
+										<input type="file" class="form-control" id="setting-input-2"  formControlName="image">
+									</div>--> 
+									<div class="mb-3">
+									    <label for="setting-input-2" class="form-label">Nom produit</label>
+									    <input type="text" class="form-control" id="setting-input-2" id="nomProd" required name="nomProd" placeholder="Nom Produit"  formControlName="nomProd">
+									</div>
+									<!--<div class="mb-3">
+									    <label for="setting-input-2" class="form-label">Catégorie produit</label>
+										<select class="form-control" name="my-select" [(ngModel)]="mySelect" formControlName="categorieProduit">
+											<option [value]="productCategory._id" *ngFor="let productCategory of productsCategory">
+												{{productCategory.libelle}}
+											</option>
+										</select>
+										<h4>Selected Values</h4>
+
+										<div>
+											Selected: {{mySelect}}
+										</div>
+									</div>-->
+									<!--<div class="mb-3">
+									    <label for="setting-input-2" class="form-label">Catégorie produit</label>
+										<select class="form-control" formControlName="productCategoryId">
+											<option class="form-control">Select</option>
+											<option class="form-control" id="productCategoryId" name=" productCategoryId" value="{{productCategory._id}}"    *ngFor="let productCategory of productsCategory">{{productCategory.libelle}}</option>
+										  </select>
+										
+									</div>-->
+									<div class="mb-3">
+									    <label for="setting-input-2" class="form-label">Description produit</label>
+										<textarea  type="text" class="form-control" id="description" name="description"  rows="3" placeholder="Description produit" formControlName="description"></textarea>
+									</div>
+									<div class="mb-3">
+									    <label for="setting-input-2" class="form-label">Quantité</label>
+									    <input type="number" class="form-control" id="quantiteProd"name="quantiteProd" formControlName="quantiteProd" required>
+									</div>
+									<div class="mb-3">
+									    <label for="setting-input-2" class="form-label">Prix</label>
+									    <input type="number" class="form-control" id="prix"name="prix" formControlName="prix" required>
+									</div>
+
+									<button type="submit" class="btn app-btn-primary" (click)="onSubmit()">Save Changes</button>
+							    </form>
+						    </div>
+						    
+						</div>
+	                </div>
+                </div>
+                
+				<br><br>
+                
+		    </div>
+	    </div>
+
+	    
+    </div> 					
+
+ 
+    <!-- Javascript -->          
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+    
+    <!-- Page Specific JS -->
+    <script src="assets/js/app.js"></script> 
+
+</body>
+</html> 
+
